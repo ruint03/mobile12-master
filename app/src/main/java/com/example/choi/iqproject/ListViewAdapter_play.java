@@ -1,6 +1,7 @@
 package com.example.choi.iqproject;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
@@ -60,7 +61,6 @@ public class ListViewAdapter_play extends BaseAdapter {
             public void onClick(View v) {
                 switch(pos){
                     case 0:
-
                 }
 
             }
