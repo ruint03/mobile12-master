@@ -19,7 +19,6 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
@@ -81,13 +80,13 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:text="2)일상생활을 방해할 정도로 끊임없이 움직이려고 한다." />
 
             <RadioGroup
+                android:id="@+id/rg_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -136,13 +135,13 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:text="3)의자나 바닥에 서 있을 때 몸을 흔든다." />
 
             <RadioGroup
+                android:id="@+id/rg_3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -192,13 +191,13 @@
             android:layout_marginTop="10dp">
 
             <TextView
-                android:id="@+id/editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:text="4) 특정한 맛을 매우 좋아한다." />
 
             <RadioGroup
+                android:id="@+id/rg_4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -248,13 +247,13 @@
             android:layout_marginTop="10dp">
 
             <TextView
-                android:id="@+id/editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:text="5) 가구나 다른 사람에게 걸친다." />
 
             <RadioGroup
+                android:id="@+id/rg_5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -304,13 +303,13 @@
             android:layout_marginTop="10dp">
 
             <TextView
-                android:id="@+id/editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:text="6) 방을 돌아다니는 사람들을 지켜본다" />
 
             <RadioGroup
+                android:id="@+id/rg_6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -360,13 +359,13 @@
             android:layout_marginTop="10dp">
 
             <TextView
-                android:id="@+id/editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:text="7) 한 활동에서 다른 활동으로 건너뛰어서 활동에 방해가 된다." />
 
             <RadioGroup
+                android:id="@+id/rg_7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -415,13 +414,13 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:text="8) 고집이 세고 비협조적이다." />
 
             <RadioGroup
+                android:id="@+id/rg_8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -471,13 +470,13 @@
             android:layout_marginTop="10dp">
 
             <TextView
-                android:id="@+id/editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:text="9) 극도로 화가 나서 폭발한다." />
 
             <RadioGroup
+                android:id="@+id/rg_9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -527,13 +526,13 @@
             android:layout_marginTop="10dp">
 
             <TextView
-                android:id="@+id/editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:text="10) 나나 다른 사람과의 눈맞춤을 피한다." />
 
             <RadioGroup
+                android:id="@+id/rg_10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -583,13 +582,13 @@
             android:layout_marginTop="10dp">
 
             <TextView
-                android:id="@+id/editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:text="11) 도전적인 상황에서 긍정적인 지지를 필요로 한다." />
 
             <RadioGroup
+                android:id="@+id/rg_11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -639,13 +638,13 @@
             android:layout_marginTop="10dp">
 
             <TextView
-                android:id="@+id/editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:text="12)과제를 완수하지 못하면 과도한 정서반응을 보인다." />
 
             <RadioGroup
+                android:id="@+id/rg_12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -695,13 +694,13 @@
             android:layout_marginTop="10dp">
 
             <TextView
-                android:id="@+id/editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:text="13)쉽게 좌절한다." />
 
             <RadioGroup
+                android:id="@+id/rg_13"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -751,124 +750,13 @@
             android:layout_marginTop="10dp">
 
             <TextView
-                android:id="@+id/editText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:text="12) 과제를 완수하지 못하면 과도한 정서반응을 보인다." />
-
-            <RadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="20dp"
-                android:orientation="horizontal"
-                android:layout_margin="0dp">
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="항상" />
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="자주" />
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="종종" />
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="가끔" />
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="전혀" />
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="해당없음"
-                    android:textSize="11dp" />
-            </RadioGroup>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/editText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:text="13) 쉽게 좌절한다." />
-
-            <RadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="20dp"
-                android:orientation="horizontal"
-                android:layout_margin="0dp">
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="항상" />
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="자주" />
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="종종" />
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="가끔" />
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="전혀" />
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="해당없음"
-                    android:textSize="11dp" />
-            </RadioGroup>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="10dp">
-
-            <TextView
-                android:id="@+id/editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:text="14) 일상생활에 방해가 되는 두려움이 있다." />
 
             <RadioGroup
+                android:id="@+id/rg_14"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -918,13 +806,13 @@
             android:layout_marginTop="10dp">
 
             <TextView
-                android:id="@+id/editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:text="15) 계획이나 기대, 일상생활의 변화를 참기 어려워 한다." />
 
             <RadioGroup
+                android:id="@+id/rg_15"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -974,13 +862,13 @@
             android:layout_marginTop="10dp">
 
             <TextView
-                android:id="@+id/editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:text="16) 같은 나이의 또래들보다 그룹에 참여하거나 상호작용이 적다." />
 
             <RadioGroup
+                android:id="@+id/rg_16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -1030,13 +918,13 @@
             android:layout_marginTop="10dp">
 
             <TextView
-                android:id="@+id/editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:text="17) TV나 음악소리가 나면 과제를 끝내는 것을 어려워한다." />
 
             <RadioGroup
+                android:id="@+id/rg_17"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -1085,13 +973,13 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:text="18) 주변에 소리가 많아지면 주의가 산만해 진다. " />
 
             <RadioGroup
+                android:id="@+id/rg_18"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -1141,13 +1029,13 @@
             android:layout_marginTop="10dp">
 
             <TextView
-                android:id="@+id/editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:text="19)나를 무시하거나 무시하는 것 같다." />
 
             <RadioGroup
+                android:id="@+id/rg_19"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -1197,13 +1085,13 @@
             android:layout_marginTop="10dp">
 
             <TextView
-                android:id="@+id/editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:text="20)몸단장 하는 동안 괴로움을 표현한다." />
 
             <RadioGroup
+                android:id="@+id/rg_20"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -1253,13 +1141,13 @@
             android:layout_marginTop="10dp">
 
             <TextView
-                android:id="@+id/editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:text="21) 다른 사람과 가까이 서 있는 것을 힘들어 한다." />
 
             <RadioGroup
+                android:id="@+id/rg_21"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -1309,13 +1197,13 @@
             android:layout_marginTop="10dp">
 
             <TextView
-                android:id="@+id/editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:text="22)상대방의 바디 랭귀지나 얼굴 표현을 인식하고 해석하기를 어려워한다." />
 
             <RadioGroup
+                android:id="@+id/rg_22"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -1366,13 +1254,13 @@
             android:layout_marginTop="10dp">
 
             <TextView
-                android:id="@+id/editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:text="23)같은 나이의 또래들보다 더 많은 보호가 필요하다." />
 
             <RadioGroup
+                android:id="@+id/rg_23"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -1422,13 +1310,13 @@
             android:layout_marginTop="10dp">
 
             <TextView
-                android:id="@+id/editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:text="24) 집중하는 것을 어려워한다." />
 
             <RadioGroup
+                android:id="@+id/rg_24"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -1477,13 +1365,13 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:text="25) 방 안에 일어나는 모든 행동에 관심을 두느라 주어진 과제에 참여하는 것이 어렵다." />
 
             <RadioGroup
+                android:id="@+id/rg_25"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -1533,13 +1421,13 @@
             android:layout_marginTop="10dp">
 
             <TextView
-                android:id="@+id/editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:text="26) 쉽게 잃어버린다." />
 
             <RadioGroup
+                android:id="@+id/rg_26"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -1589,7 +1477,6 @@
             android:layout_marginTop="10dp">
 
             <TextView
-                android:id="@+id/editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
@@ -1645,13 +1532,13 @@
             android:layout_marginTop="10dp">
 
             <TextView
-                android:id="@+id/editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:text="28) 길을 막는 사람이나 물체가 있을 때 알아차리지 못하고 부딪힌다." />
 
             <RadioGroup
+                android:id="@+id/rg_28"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -1701,13 +1588,13 @@
             android:layout_marginTop="10dp">
 
             <TextView
-                android:id="@+id/editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:text="29) 뻣뻣한 자세로 움직인다." />
 
             <RadioGroup
+                android:id="@+id/rg_29"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -1756,13 +1643,13 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:text="30) 쉽게 피곤해 하며 특히 서 있거나 특정한 자세를 유지하는 것을 어려워 한다. " />
 
             <RadioGroup
+                android:id="@+id/rg_30"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -1812,13 +1699,13 @@
             android:layout_marginTop="10dp">
 
             <TextView
-                android:id="@+id/editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:text="31)사고를 일으키기 쉬운 것처럼 보인다." />
 
             <RadioGroup
+                android:id="@+id/rg_31"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -1868,13 +1755,13 @@
             android:layout_marginTop="10dp">
 
             <TextView
-                android:id="@+id/editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:text="32)상대방과 매일 소통할 때 눈 맞춤을 피한다." />
 
             <RadioGroup
+                android:id="@+id/rg_32"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -1924,13 +1811,13 @@
             android:layout_marginTop="10dp">
 
             <TextView
-                android:id="@+id/editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:text="33)분주한 주위상황을 인식하지 못하는 것처럼 보인다." />
 
             <RadioGroup
+                android:id="@+id/rg_33"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -1980,13 +1867,13 @@
             android:layout_marginTop="10dp">
 
             <TextView
-                android:id="@+id/editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:text="34)어질러진 환경에서 물건을 찾는 것을 어려워한다." />
 
             <RadioGroup
+                android:id="@+id/rg_34"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
