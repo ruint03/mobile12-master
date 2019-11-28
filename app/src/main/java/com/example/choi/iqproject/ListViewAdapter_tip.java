@@ -38,8 +38,8 @@ public class ListViewAdapter_tip extends BaseAdapter {
         final int pos = position;
         final Context context = viewGroup.getContext();
         if (view == null) {
-            LayoutInflater inflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
-            view = inflater.inflate(R.layout.listview_item, viewGroup, false);
+            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            view = inflater.inflate(R.layout.listview_tip, viewGroup, false);
         }
         TextView categoryView = view.findViewById(R.id.text_category);
         ListViewItem_tip listViewItem_tip = listViewItemList.get(position);
