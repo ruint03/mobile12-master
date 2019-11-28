@@ -3,6 +3,7 @@ package com.example.choi.iqproject;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.text.LoginFilter;
@@ -12,7 +13,9 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -32,13 +35,13 @@ public class Joinlayout extends AppCompatActivity {
     Integer user_birth;
 
     //아이디 비밀번호 로그인 모듈 변수
-     FirebaseAuth Auth;
+    FirebaseAuth Auth;
 
     //현재 로그인 된 유저 정보를 담을 변수
-     FirebaseUser currUser;
+    FirebaseUser currUser;
 
-     private FirebaseDatabase Data;
-     private DatabaseReference User;
+    private FirebaseDatabase Data;
+    private DatabaseReference User;
 
     private String id1;
 
@@ -48,7 +51,7 @@ public class Joinlayout extends AppCompatActivity {
         Auth = FirebaseAuth.getInstance();
         Data = FirebaseDatabase.getInstance();
         User = Data.getReference();
-        currUser = Auth.getCurrentUser() ;
+        currUser = Auth.getCurrentUser();
         final RadioGroup radioGroup = (RadioGroup) findViewById(R.id.genderGroup);
         reg_id = (EditText) findViewById(R.id.idText);//id 입력
         reg_pass = (EditText) findViewById(R.id.passwordText);//password 입력
@@ -94,51 +97,49 @@ public class Joinlayout extends AppCompatActivity {
                 user_name = reg_name.getText().toString();
                 user_birth = Integer.parseInt(reg_birth.getText().toString());
                 joinStart(user_id, user_pass);
-                joinDB(user_id, user_pass,user_name,gender,user_birth);
+                currUser = Auth.getCurrentUser();
+                id1 = currUser.getUid();
+
+                User.child("USER").child(id1).child("ID").setValue(user_id);
+                User.child("USER").child(id1).child("PASS").setValue(user_pass);
+                User.child("USER").child(id1).child("NAME").setValue(user_name);
+                User.child("USER").child(id1).child("GENDER").setValue(gender);
+                User.child("USER").child(id1).child("BIRTH").setValue(user_birth);
                 setResult(RESULT_OK, result);
                 finish();
 
             }
         });
     }
-            //가입 함수
-            public void joinStart(String email, String password){
 
-                Auth.createUserWithEmailAndPassword(email, password)
-                        .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
+    //가입 함수
+    public void joinStart(String email, String password) {
 
-                                if (!task.isSuccessful()) {
-                                    try {
-                                        throw task.getException();
-                                    } catch (FirebaseAuthWeakPasswordException e) {
-                                        Toast.makeText(Joinlayout.this, "비밀번호가 간단해요.", Toast.LENGTH_SHORT).show();
-                                    } catch (FirebaseAuthInvalidCredentialsException e) {
-                                        Toast.makeText(Joinlayout.this, "email 형식에 맞지 않습니다.", Toast.LENGTH_SHORT).show();
-                                    } catch (FirebaseAuthUserCollisionException e) {
-                                        Toast.makeText(Joinlayout.this, "이미존재하는 email 입니다.", Toast.LENGTH_SHORT).show();
-                                    } catch (Exception e) {
-                                        Toast.makeText(Joinlayout.this, "다시 확인해주세요.", Toast.LENGTH_SHORT).show();
-                                    }
-                                } else {
-                                    startActivity(new Intent(Joinlayout.this, MainActivity.class));
-                                    finish();
-                                }
+        Auth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+
+                        if (!task.isSuccessful()) {
+                            try {
+                                throw task.getException();
+                            } catch (FirebaseAuthWeakPasswordException e) {
+                                Toast.makeText(Joinlayout.this, "비밀번호가 간단해요.", Toast.LENGTH_SHORT).show();
+                            } catch (FirebaseAuthInvalidCredentialsException e) {
+                                Toast.makeText(Joinlayout.this, "email 형식에 맞지 않습니다.", Toast.LENGTH_SHORT).show();
+                            } catch (FirebaseAuthUserCollisionException e) {
+                                Toast.makeText(Joinlayout.this, "이미존재하는 email 입니다.", Toast.LENGTH_SHORT).show();
+                            } catch (Exception e) {
+                                Toast.makeText(Joinlayout.this, "다시 확인해주세요.", Toast.LENGTH_SHORT).show();
                             }
-                         });
-            }
+                        } else {
+                            startActivity(new Intent(Joinlayout.this, MainActivity.class));
+                            finish();
+                        }
+                    }
+                });
+    }
 
-            public void joinDB(String email, String password,String name, String gender, int birth){
-                    currUser = Auth.getCurrentUser();
-                    id1 = currUser.getUid();
-
-                    User.child("USER").child(id1).child("ID").setValue(email);
-                    User.child("USER").child(id1).child("PASS").setValue(password);
-                    User.child("USER").child(id1).child("NAME").setValue(name);
-                    User.child("USER").child(id1).child("GENDER").setValue(gender);
-                    User.child("USER").child(id1).child("BIRTH").setValue(birth);
-                }
 
 }
 

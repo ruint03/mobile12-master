@@ -12,12 +12,12 @@ import android.widget.RadioGroup;
 
 public class Onelayout extends Fragment {
     View v;
-    RadioGroup rg;
+    RadioGroup[] rg;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         v= inflater. inflate(R.layout.one_layout,container,false);
-        rg = (RadioGroup)v.findViewById(R.id.rg_1);
+        rg[0] = (RadioGroup)v.findViewById(R.id.rg_1);
 return v;
     }
 }

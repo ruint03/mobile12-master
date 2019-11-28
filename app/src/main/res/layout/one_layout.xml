@@ -37,31 +37,37 @@
                 android:layout_margin="0dp">
 
                 <RadioButton
+                    android:id="@+id/rb_5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="항상" />
 
                 <RadioButton
+                    android:id="@+id/rb_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="자주" />
 
                 <RadioButton
+                    android:id="@+id/rb_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="종종" />
 
                 <RadioButton
+                    android:id="@+id/rb_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="가끔" />
 
                 <RadioButton
+                    android:id="@+id/rb_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="전혀" />
 
                 <RadioButton
+                    android:id="@+id/rb_0"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="해당없음"
