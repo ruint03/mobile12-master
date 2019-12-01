@@ -1,10 +1,6 @@
 package com.example.choi.iqproject;
 
 import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,11 +10,11 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 
-public class ListViewAdapter_play extends BaseAdapter {
+public class ListViewAdapter_q extends BaseAdapter {
     Context mContext;
-    private ArrayList<ListViewItem_play> listViewItemList;
+    private ArrayList<ListViewItem_q> listViewItemList;
 
-    public ListViewAdapter_play(Context mContext, ArrayList<ListViewItem_play> items) {
+    public ListViewAdapter_q(Context mContext, ArrayList<ListViewItem_q> items) {
         this.mContext = mContext;
         listViewItemList = items;
     }
@@ -50,21 +46,12 @@ public class ListViewAdapter_play extends BaseAdapter {
         TextView subtitleTextView = convertView.findViewById(R.id.textsub_title);
         TextView indexTextView = convertView.findViewById(R.id.text_index);
 
-        ListViewItem_play listViewItem_play = listViewItemList.get(position);
+        ListViewItem_q listViewItem_play = listViewItemList.get(position);
 
         titleTextView.setText(listViewItem_play.getTitle());
         subtitleTextView.setText(listViewItem_play.getsubTitle());
         indexTextView.setText(listViewItem_play.getindex());
 
-        convertView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                switch(pos){
-                    case 0:
-                }
-
-            }
-        });
 
         return convertView;
     }

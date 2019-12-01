@@ -2,12 +2,12 @@ package com.example.choi.iqproject;
 
 import android.graphics.drawable.Drawable;
 
-public class ListViewItem_play {
+public class ListViewItem_q {
     private String index_num;
     private String title_str;
     private String sub_title_str;
 
-    public ListViewItem_play(String index_num, String title_str, String sub_title_str) {
+    public ListViewItem_q(String index_num, String title_str, String sub_title_str) {
         this.index_num = index_num;
         this.title_str = title_str;
         this.sub_title_str = sub_title_str;

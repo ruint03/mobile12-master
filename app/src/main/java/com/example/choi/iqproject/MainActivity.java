@@ -72,6 +72,7 @@ public class MainActivity extends AppCompatActivity
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
+
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
@@ -97,7 +98,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_four_layout) {
            manager.beginTransaction().replace(R.id.content_main, new Fourlayout()).commit();
         } else if (id == R.id.nav_five_layout) {
-            manager.beginTransaction().replace(R.id.content_main, new new_content()).commit();
+            manager.beginTransaction().replace(R.id.content_main, new Fivelayout()).commit();
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
