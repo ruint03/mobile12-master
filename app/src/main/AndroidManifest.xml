@@ -26,6 +26,7 @@
         <activity android:name=".Navheadermain" />
         <activity android:name=".Loginlayout" />
         <activity android:name=".Joinlayout" />
+        <activity android:name=".new_content"/>
     </application>
 
 </manifest>
