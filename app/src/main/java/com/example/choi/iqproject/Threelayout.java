@@ -9,15 +9,18 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Threelayout extends Fragment {
     View v;
     private Context mContext;
-    ListView listView_play;
-    ArrayList<ListViewItem_q> items;
+    ListView listview_play;
+    ArrayList<ListViewItem_play> items_play;
+
 
     public Threelayout() {}
     @SuppressLint("ValidFragment")
@@ -29,11 +32,15 @@ public class Threelayout extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.three_layout, container, false);
-//        listView_play = v.findViewById(R.id.list_play);
-//        items = new ArrayList<>();
-//        items.add(new ListViewItem_q("<1>", "감각행동 추구", "(Sensory seeking behaviors)"));
-//        items.add(new ListViewItem_q("<2>", "감각 회피 행동","(Sensory avoiding behaviors)"));
-//        listView_play.setAdapter(new ListViewAdapter_q(mContext, items));
+        listview_play = v.findViewById(R.id.list_play);
+        items_play = new ArrayList<>();
+        items_play.add(new ListViewItem_play("지퍼백 물감놀이"));
+        items_play.add(new ListViewItem_play("풍선 감각 놀이"));
+        items_play.add(new ListViewItem_play("풍선 배드민턴 놀이"));
+        items_play.add(new ListViewItem_play("풍선 그리기 놀이"));
+        items_play.add(new ListViewItem_play("우유통 볼링"));
+        listview_play.setAdapter(new ListViewAdapter_play(mContext,items_play));
+
         return v;
     }
 }
