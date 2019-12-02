@@ -39,23 +39,10 @@
             android:id="@+id/write_comment"
             app:layout_constraintTop_toBottomOf="@+id/comment"/>
         <ListView
+            android:id="@+id/list_comment"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             app:layout_constraintTop_toBottomOf="@+id/write_comment"/>
-<!--            <TextView-->
-<!--                android:id="@+id/comment_writer"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="작성자"-->
-<!--                app:layout_constraintTop_toBottomOf="@+id/write_comment"-->
-<!--                app:layout_constraintLeft_toLeftOf="parent"/>-->
-<!--            <TextView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="댓글 내용"-->
-<!--                app:layout_constraintLeft_toRightOf="@+id/comment_writer"-->
-<!--                app:layout_constraintTop_toBottomOf="@+id/write_comment"-->
-<!--                android:layout_marginLeft="30dp"/>-->
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
