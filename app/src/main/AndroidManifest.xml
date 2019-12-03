@@ -28,6 +28,7 @@
         <activity android:name=".Joinlayout" />
         <activity android:name=".new_content"/>
         <activity android:name=".content"/>
+        <activity android:name=".result"/>
     </application>
 
 </manifest>
