@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity
        FragmentManager manager = getFragmentManager();
 
         if (id == R.id.nav_one_layout) {
-            manager.beginTransaction().replace(R.id.content_main, new Onelayout()).commit();
+            manager.beginTransaction().replace(R.id.content_main, new Onelayout(this)).commit();
         } else if (id == R.id.nav_two_layout) {
           manager.beginTransaction().replace(R.id.content_main,new Twolayout()).commit();
         } else if (id == R.id.nav_three_layout) {

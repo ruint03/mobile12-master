@@ -4,6 +4,7 @@ package com.example.choi.iqproject;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,6 +14,7 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.FrameLayout;
 import android.widget.ListView;
 
@@ -63,6 +65,13 @@ public class Twolayout extends Fragment {
         items_content.add(new ListViewItem_content("테스트를 하기위한 제목 설정 중입니다(2)", "관리자"));
         listview_category.setAdapter(new ListViewAdapter_q(mContext, items_q));
         listview_content.setAdapter(new ListViewAdapter_content(mContext,items_content));
+        listview_content.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(getActivity(),content.class);
+                startActivity(intent);
+            }
+        });
         return v;
     }
     private void changeView(int index){
@@ -72,14 +81,15 @@ public class Twolayout extends Fragment {
         switch (index){
             case 0:
                 frame.addView(listview_category);
+                listview_category.setVisibility(View.VISIBLE);
                 listview_content.setVisibility(View.GONE);
                 frame.removeView(listview_content);
                 break;
             case 1:
-                frame.addView(listview_content);
                 frame.removeAllViews();
+                frame.addView(listview_content);
+                listview_content.setVisibility(View.VISIBLE);
                 listview_category.setVisibility(View.GONE);
-
                 break;
         }
     }

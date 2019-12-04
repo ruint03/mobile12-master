@@ -228,7 +228,7 @@
         android:id="@+id/table7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="300dp">
+        android:layout_marginTop="100dp">
 
         <TextView
             android:layout_width="187dp"

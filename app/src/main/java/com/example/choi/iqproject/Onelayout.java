@@ -18,8 +18,7 @@ import android.widget.RadioGroup;
 public class Onelayout extends Fragment {
     Context mContext;
     View v;
-//    String packName = mContext.getPackageName();
-    RadioGroup[] rg;
+    RadioGroup rg[] = new RadioGroup[35];
     String id = "R.id.rg_";
     Button done;
 
@@ -37,14 +36,19 @@ public class Onelayout extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.one_layout, container, false);
         for (int i = 1; i <= 34; i++) {
-//            int k = getResources().getIdentifier("rg_" + i, "id",mContext.getPackageName() );
-//            rg[i] = v.findViewById(k);
+            int k = getResources().getIdentifier("rg_" + i, "id", mContext.getPackageName());
+            rg[i] = v.findViewById(k);
         }
         done = v.findViewById(R.id.btn_done);
         done.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(),result.class);
+                for (int i = 1; i <= 34; i++) {
+                    int radioButtonID = rg[i].getCheckedRadioButtonId();
+                    View radioButton = rg[i].findViewById(radioButtonID);
+                    int idx = rg[i].indexOfChild(radioButton);
+                }
+                Intent intent = new Intent(getActivity(), result.class);
                 startActivity(intent);
             }
         });
