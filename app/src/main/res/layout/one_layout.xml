@@ -1483,6 +1483,7 @@
                 android:text="27) 울퉁불퉁한 곳을 걸을 때 갑자기 균형을 잃는다." />
 
             <RadioGroup
+                android:id="@+id/rg_27"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"

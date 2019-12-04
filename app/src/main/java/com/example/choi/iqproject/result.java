@@ -10,13 +10,22 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class result extends AppCompatActivity {
-    TextView avoid, sensor, seek, regist;
     int result_avoid, result_sensor, result_seek, result_resist;
     Button exit;
+    TextView seek, avoid, sensor, regist;
+    String score_avoid,score_sensor,score_regist,score_seek;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.result);
+        seek = (TextView)findViewById(R.id.text_seek);
+        avoid = (TextView)findViewById(R.id.text_avoid);
+        sensor = (TextView)findViewById(R.id.text_sensor);
+        regist = (TextView)findViewById(R.id.text_regist);
+        seek.setText(String.valueOf(score_seek));
+        avoid.setText(String.valueOf(score_avoid));
+        sensor.setText(String.valueOf(score_sensor));
+        regist.setText(String.valueOf(score_regist));
         exit = findViewById(R.id.btn_exit);
         exit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -29,18 +38,5 @@ public class result extends AppCompatActivity {
 
             }
         });
-//        View v = new View(this);
-//        v.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT,1));
-//        v.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT));
-//        seek = findViewById(R.id.text_seek);
-//        avoid = findViewById(R.id.text_avoid);
-//        sensor = findViewById(R.id.text_sensor);
-//        regist = findViewById(R.id.text_regist);
-//
-//        seek.setText(result_avoid);
-//        avoid.setText(result_avoid);
-//        sensor.setText(result_sensor);
-//        regist.setText(result_resist);
-
     }
 }
