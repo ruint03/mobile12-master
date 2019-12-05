@@ -112,6 +112,11 @@ public class MainActivity extends AppCompatActivity
             case R.id.loginmove:
                 Intent intent = new Intent(this,Loginlayout.class);
                 startActivityForResult(intent,2000);
+                break;
+            case R.id.text_id:
+                Intent intent1 = new Intent(this, profile.class);
+                startActivity(intent1);
+                break;
         }
     }
     //로그인 완료시 버튼 제거 및 사용자 계정 정보 출력
@@ -126,7 +131,7 @@ public class MainActivity extends AppCompatActivity
         user_id = (TextView)findViewById(R.id.text_id);
 
         if (requestCode == 2000 && resultCode == RESULT_OK) {
-            Toast.makeText(getApplicationContext(),"receive",Toast.LENGTH_SHORT).show();
+//            Toast.makeText(getApplicationContext(),"receive",Toast.LENGTH_SHORT).show();
             loginmove.setVisibility(View.GONE);
             user_id.setVisibility(View.VISIBLE);
             user_id.setText(data.getStringExtra("id"));

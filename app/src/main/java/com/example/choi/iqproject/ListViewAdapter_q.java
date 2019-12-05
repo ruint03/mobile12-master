@@ -1,11 +1,14 @@
 package com.example.choi.iqproject;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import java.util.ArrayList;
 
@@ -46,11 +49,14 @@ public class ListViewAdapter_q extends BaseAdapter {
         TextView subtitleTextView = convertView.findViewById(R.id.textsub_title);
         TextView indexTextView = convertView.findViewById(R.id.text_index);
 
-        ListViewItem_q listViewItem_play = listViewItemList.get(position);
+        ListViewItem_q listViewItem_q = listViewItemList.get(position);
 
-        titleTextView.setText(listViewItem_play.getTitle());
-        subtitleTextView.setText(listViewItem_play.getsubTitle());
-        indexTextView.setText(listViewItem_play.getindex());
+        titleTextView.setText(listViewItem_q.getTitle());
+        subtitleTextView.setText(listViewItem_q.getsubTitle());
+        indexTextView.setText(listViewItem_q.getindex());
+
+        ConstraintLayout cmdArea = (ConstraintLayout) convertView.findViewById(R.id.constraint_q);
+
 
 
         return convertView;

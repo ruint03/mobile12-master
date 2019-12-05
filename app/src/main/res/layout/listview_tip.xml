@@ -11,9 +11,12 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="1. 수면"
-        android:textSize="25sp"
+        android:text="수 면"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
         android:gravity="center"
+        android:background="@drawable/play_2"
         />
 
 

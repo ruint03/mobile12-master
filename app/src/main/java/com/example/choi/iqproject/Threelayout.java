@@ -2,6 +2,7 @@ package com.example.choi.iqproject;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -9,6 +10,7 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -40,6 +42,40 @@ public class Threelayout extends Fragment {
         items_play.add(new ListViewItem_play("풍선 그리기 놀이"));
         items_play.add(new ListViewItem_play("우유통 볼링"));
         listview_play.setAdapter(new ListViewAdapter_play(mContext,items_play));
+        listview_play.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                switch (position)
+                {
+
+                    case 0:
+                        Intent intent= new Intent(view.getContext(), Play0.class);
+                        startActivity(intent);
+                        break;
+                    case 1:
+                        intent = new Intent(view.getContext(), Play1.class);
+                        startActivity(intent);
+                        break;
+                    case 2:
+                        intent = new Intent(view.getContext(), Play2.class);
+                        startActivity(intent);
+                        break;
+                    case 3:
+                        intent = new Intent(view.getContext(), Play3.class);
+                        startActivity(intent);
+                        break;
+                    case 4:
+                        intent = new Intent(view.getContext(), Play4.class);
+                        startActivity(intent);
+                        break;
+
+
+                }
+                //Toast.makeText(getContext(), Integer.toString(position), Toast.LENGTH_LONG).show();
+                //intent
+            }
+        });
 
         return v;
     }

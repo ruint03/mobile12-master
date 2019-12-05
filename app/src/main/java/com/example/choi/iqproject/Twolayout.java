@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.FrameLayout;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
 
@@ -29,6 +30,7 @@ public class Twolayout extends Fragment {
     ListView listview_category, listview_content;
     ArrayList<ListViewItem_q> items_q;
     ArrayList<ListViewItem_content> items_content;
+    int i =0;
     public Twolayout() {}
 
     @SuppressLint("ValidFragment")
@@ -65,6 +67,22 @@ public class Twolayout extends Fragment {
         items_content.add(new ListViewItem_content("테스트를 하기위한 제목 설정 중입니다(2)", "관리자"));
         listview_category.setAdapter(new ListViewAdapter_q(mContext, items_q));
         listview_content.setAdapter(new ListViewAdapter_content(mContext,items_content));
+        listview_category.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                int i = position;
+                if(i==0){
+                    Intent intent = new Intent(getActivity(),ListQnA.class);
+                    intent.putExtra("key","seeking");
+                    startActivity(intent);
+                }
+                if(i==1){
+                    Intent intent = new Intent(getActivity(),ListQnA.class);
+                    intent.putExtra("key_2", "avoiding");
+                    startActivity(intent);
+                }
+            }
+        });
         listview_content.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {

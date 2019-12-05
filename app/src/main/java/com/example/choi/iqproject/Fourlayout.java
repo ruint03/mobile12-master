@@ -2,6 +2,7 @@ package com.example.choi.iqproject;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -9,6 +10,7 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -36,6 +38,46 @@ public class Fourlayout extends Fragment {
         items_tip.add(new ListViewItem_tip("6. 이 닦기"));
         items_tip.add(new ListViewItem_tip("7. 먹기"));
         listview_category.setAdapter(new ListViewAdapter_tip(mContext,items_tip));
+        listview_category.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                switch (position)
+                {
+
+                    case 0:
+                        Intent intent= new Intent(view.getContext(), Tip0.class);
+                        startActivity(intent);
+                        break;
+                    case 1:
+                        intent= new Intent(view.getContext(), Tip1.class);
+                        startActivity(intent);
+                        break;
+                    case 2:
+                        intent= new Intent(view.getContext(), Tip2.class);
+                        startActivity(intent);
+                        break;
+                    case 3:
+                        intent= new Intent(view.getContext(), Tip3.class);
+                        startActivity(intent);
+                        break;
+                    case 4:
+                        intent= new Intent(view.getContext(), Tip4.class);
+                        startActivity(intent);
+                        break;
+                    case 5:
+                        intent= new Intent(view.getContext(), Tip5.class);
+                        startActivity(intent);
+                        break;
+                    case 6:
+                        intent= new Intent(view.getContext(), Tip6.class);
+                        startActivity(intent);
+                        break;
+                }
+                //Toast.makeText(getContext(), Integer.toString(position), Toast.LENGTH_LONG).show();
+                //intent
+            }
+        });
 
     return v;
     }

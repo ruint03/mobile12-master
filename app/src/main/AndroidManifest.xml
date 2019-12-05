@@ -26,9 +26,22 @@
         <activity android:name=".Navheadermain" />
         <activity android:name=".Loginlayout" />
         <activity android:name=".Joinlayout" />
+        <activity android:name=".ListQnA"/>
         <activity android:name=".new_content"/>
         <activity android:name=".content"/>
         <activity android:name=".result"/>
+        <activity android:name=".Play0"/>
+        <activity android:name=".Play1"/>
+        <activity android:name=".Play2"/>
+        <activity android:name=".Play3"/>
+        <activity android:name=".Play4"/>
+        <activity android:name=".Tip0"/>
+        <activity android:name=".Tip1"/>
+        <activity android:name=".Tip2"/>
+        <activity android:name=".Tip3"/>
+        <activity android:name=".Tip4"/>
+        <activity android:name=".Tip5"/>
+        <activity android:name=".Tip6"/>
     </application>
 
 </manifest>
