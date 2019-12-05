@@ -13,15 +13,17 @@ public class result extends AppCompatActivity {
     int result_avoid, result_sensor, result_seek, result_resist;
     Button exit;
     TextView seek, avoid, sensor, regist;
-    String score_avoid,score_sensor,score_regist,score_seek;
+    int score_avoid,score_sensor,score_regist,score_seek;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.result);
+        Intent intent = getIntent();
         seek = (TextView)findViewById(R.id.text_seek);
         avoid = (TextView)findViewById(R.id.text_avoid);
         sensor = (TextView)findViewById(R.id.text_sensor);
         regist = (TextView)findViewById(R.id.text_regist);
+        score_seek = intent.getIntExtra("seek");
         seek.setText(String.valueOf(score_seek));
         avoid.setText(String.valueOf(score_avoid));
         sensor.setText(String.valueOf(score_sensor));

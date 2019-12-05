@@ -29,6 +29,7 @@ public class Onelayout extends Fragment {
     TextView seek, avoid, sensor, regist;
     String id = "R.id.rg_";
     Button done;
+    private View header;
 
     public Onelayout() {
     }
@@ -56,10 +57,12 @@ public class Onelayout extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.one_layout, container, false);
-        seek = (TextView)v.findViewById(R.id.text_seek);
-        avoid = (TextView)v.findViewById(R.id.text_avoid);
-        sensor = (TextView)v.findViewById(R.id.text_sensor);
-        regist = (TextView)v.findViewById(R.id.text_regist);
+        header = getLayoutInflater().inflate(R.layout.result, null, false);
+        seek = (TextView)header.findViewById(R.id.text_seek);
+        avoid = (TextView)header.findViewById(R.id.text_avoid);
+        sensor = (TextView)header.findViewById(R.id.text_sensor);
+        regist = (TextView)header.findViewById(R.id.text_regist);
+
         for (int i = 1; i <= 34; i++) {
             int k = getResources().getIdentifier("rg_" + i, "id", mContext.getPackageName());
             rg[i] = v.findViewById(k);
@@ -82,8 +85,16 @@ public class Onelayout extends Fragment {
                         score[21] + score[25] + score[28] + score[29] + score[33];
                 score_regist = score[9] + score[10] + score[12] + score[13] + score[15] +
                         score[27] + score[30] + score[34];
-//                .makeText(mContext, String.valueOf(score_seek), Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, String.valueOf(score_seek), Toast.LENGTH_SHORT).show();
+                seek.setText(String.valueOf(score_seek));
+                avoid.setText(String.valueOf(score_avoid));
+                sensor.setText(String.valueOf(score_sensor));
+                regist.setText(String.valueOf(score_regist));
                 Intent intent = new Intent(getActivity(), result.class);
+                intent.putExtra("seek",score_seek);
+//                intent.putExtra("avoid",score_avoid);
+//                intent.putExtra("sensor",score_sensor);
+//                intent.putExtra("regist",score_regist);
                 startActivity(intent);
             }
         });
