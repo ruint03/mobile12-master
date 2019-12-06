@@ -23,7 +23,10 @@ public class result extends AppCompatActivity {
         avoid = (TextView)findViewById(R.id.text_avoid);
         sensor = (TextView)findViewById(R.id.text_sensor);
         regist = (TextView)findViewById(R.id.text_regist);
-//        score_seek = intent.getIntExtra("seek");
+        score_seek = getIntent().getIntExtra("seek",1);
+        score_avoid = getIntent().getIntExtra("avoid",1);
+        score_sensor = getIntent().getIntExtra("sensor",1);
+        score_regist = getIntent().getIntExtra("regist",1);
         seek.setText(String.valueOf(score_seek));
         avoid.setText(String.valueOf(score_avoid));
         sensor.setText(String.valueOf(score_sensor));

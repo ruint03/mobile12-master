@@ -22,6 +22,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
+                android:textColor="#000000"
                 android:text="1)같은 나이의 또래보다 사람과 물체를 더 만진다." />
 
             <RadioGroup
@@ -83,6 +84,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
+                android:textColor="#000000"
                 android:text="2)일상생활을 방해할 정도로 끊임없이 움직이려고 한다." />
 
             <RadioGroup
@@ -138,6 +140,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
+                android:textColor="#000000"
                 android:text="3)의자나 바닥에 서 있을 때 몸을 흔든다." />
 
             <RadioGroup
@@ -194,6 +197,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
+                android:textColor="#000000"
                 android:text="4) 특정한 맛을 매우 좋아한다." />
 
             <RadioGroup
@@ -250,6 +254,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
+                android:textColor="#000000"
                 android:text="5) 가구나 다른 사람에게 걸친다." />
 
             <RadioGroup
@@ -306,6 +311,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
+                android:textColor="#000000"
                 android:text="6) 방을 돌아다니는 사람들을 지켜본다" />
 
             <RadioGroup
@@ -362,6 +368,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
+                android:textColor="#000000"
                 android:text="7) 한 활동에서 다른 활동으로 건너뛰어서 활동에 방해가 된다." />
 
             <RadioGroup
@@ -417,6 +424,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
+                android:textColor="#000000"
                 android:text="8) 고집이 세고 비협조적이다." />
 
             <RadioGroup
@@ -473,6 +481,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
+                android:textColor="#000000"
                 android:text="9) 극도로 화가 나서 폭발한다." />
 
             <RadioGroup
@@ -529,6 +538,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
+                android:textColor="#000000"
                 android:text="10) 나나 다른 사람과의 눈맞춤을 피한다." />
 
             <RadioGroup
@@ -585,6 +595,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
+                android:textColor="#000000"
                 android:text="11) 도전적인 상황에서 긍정적인 지지를 필요로 한다." />
 
             <RadioGroup
@@ -641,6 +652,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
+                android:textColor="#000000"
                 android:text="12)과제를 완수하지 못하면 과도한 정서반응을 보인다." />
 
             <RadioGroup
@@ -697,6 +709,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
+                android:textColor="#000000"
                 android:text="13)쉽게 좌절한다." />
 
             <RadioGroup
@@ -753,6 +766,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
+                android:textColor="#000000"
                 android:text="14) 일상생활에 방해가 되는 두려움이 있다." />
 
             <RadioGroup
@@ -809,6 +823,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
+                android:textColor="#000000"
                 android:text="15) 계획이나 기대, 일상생활의 변화를 참기 어려워 한다." />
 
             <RadioGroup
@@ -865,6 +880,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
+                android:textColor="#000000"
                 android:text="16) 같은 나이의 또래들보다 그룹에 참여하거나 상호작용이 적다." />
 
             <RadioGroup
@@ -921,6 +937,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
+                android:textColor="#000000"
                 android:text="17) TV나 음악소리가 나면 과제를 끝내는 것을 어려워한다." />
 
             <RadioGroup
@@ -976,6 +993,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
+                android:textColor="#000000"
                 android:text="18) 주변에 소리가 많아지면 주의가 산만해 진다. " />
 
             <RadioGroup
@@ -1032,6 +1050,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
+                android:textColor="#000000"
                 android:text="19)나를 무시하거나 무시하는 것 같다." />
 
             <RadioGroup
@@ -1088,6 +1107,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
+                android:textColor="#000000"
                 android:text="20)몸단장 하는 동안 괴로움을 표현한다." />
 
             <RadioGroup
@@ -1144,6 +1164,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
+                android:textColor="#000000"
                 android:text="21) 다른 사람과 가까이 서 있는 것을 힘들어 한다." />
 
             <RadioGroup
@@ -1200,6 +1221,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
+                android:textColor="#000000"
                 android:text="22)상대방의 바디 랭귀지나 얼굴 표현을 인식하고 해석하기를 어려워한다." />
 
             <RadioGroup
@@ -1257,6 +1279,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
+                android:textColor="#000000"
                 android:text="23)같은 나이의 또래들보다 더 많은 보호가 필요하다." />
 
             <RadioGroup
@@ -1313,6 +1336,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
+                android:textColor="#000000"
                 android:text="24) 집중하는 것을 어려워한다." />
 
             <RadioGroup
@@ -1368,6 +1392,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
+                android:textColor="#000000"
                 android:text="25) 방 안에 일어나는 모든 행동에 관심을 두느라 주어진 과제에 참여하는 것이 어렵다." />
 
             <RadioGroup
@@ -1424,6 +1449,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
+                android:textColor="#000000"
                 android:text="26) 쉽게 잃어버린다." />
 
             <RadioGroup
@@ -1480,6 +1506,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
+                android:textColor="#000000"
                 android:text="27) 울퉁불퉁한 곳을 걸을 때 갑자기 균형을 잃는다." />
 
             <RadioGroup
@@ -1536,6 +1563,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
+                android:textColor="#000000"
                 android:text="28) 길을 막는 사람이나 물체가 있을 때 알아차리지 못하고 부딪힌다." />
 
             <RadioGroup
@@ -1592,6 +1620,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
+                android:textColor="#000000"
                 android:text="29) 뻣뻣한 자세로 움직인다." />
 
             <RadioGroup
@@ -1647,6 +1676,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
+                android:textColor="#000000"
                 android:text="30) 쉽게 피곤해 하며 특히 서 있거나 특정한 자세를 유지하는 것을 어려워 한다. " />
 
             <RadioGroup
@@ -1703,6 +1733,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
+                android:textColor="#000000"
                 android:text="31)사고를 일으키기 쉬운 것처럼 보인다." />
 
             <RadioGroup
@@ -1759,6 +1790,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
+                android:textColor="#000000"
                 android:text="32)상대방과 매일 소통할 때 눈 맞춤을 피한다." />
 
             <RadioGroup
@@ -1815,6 +1847,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
+                android:textColor="#000000"
                 android:text="33)분주한 주위상황을 인식하지 못하는 것처럼 보인다." />
 
             <RadioGroup
@@ -1871,6 +1904,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
+                android:textColor="#000000"
                 android:text="34)어질러진 환경에서 물건을 찾는 것을 어려워한다." />
 
             <RadioGroup
