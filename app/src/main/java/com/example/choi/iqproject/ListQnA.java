@@ -3,6 +3,8 @@ package com.example.choi.iqproject;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,18 +28,34 @@ public class ListQnA extends AppCompatActivity {
         items_tip = new ArrayList<>();
          if(get_intent.equals("seeking")) {
             items_tip.add(new ListViewItem_tip("Q1) 깨물기와 이갈기를 하는 아이"));
-            items_tip.add(new ListViewItem_tip("Q2) 달리기, 회전하기, 움직임 찾아다니는 아이"));
-            items_tip.add(new ListViewItem_tip("Q3) 치기, 철썩 때리기, 꼬집기, 쥐어짜기, 움켜집기, 잡아당기기를 하는아이"));
+            items_tip.add(new ListViewItem_tip("Q2) 달리기, 회전하기\n 움직임 찾아다니는 아이"));
+            items_tip.add(new ListViewItem_tip("Q3) 치기, 철썩 때리기, 꼬집기, 쥐어짜기\n 움켜집기, 잡아당기기를 하는아이"));
             items_tip.add(new ListViewItem_tip("Q4) 손 흔들기"));
             listview_category.setAdapter(new ListViewAdapter_tip(mContext, items_tip));
         }
-        if(get_intent_2.equals("avoiding")){
-            items_tip.add(new ListViewItem_tip("Q1) 깨물기와 이갈기를 하는 아이"));
-            items_tip.add(new ListViewItem_tip("Q2) 달리기, 회전하기, 움직임 찾아다니는 아이"));
-            items_tip.add(new ListViewItem_tip("Q3) 치기, 철썩 때리기, 꼬집기, 쥐어짜기, 움켜집기, 잡아당기기를 하는아이"));
-            items_tip.add(new ListViewItem_tip("Q4) 손 흔들기"));
-            listview_category.setAdapter(new ListViewAdapter_tip(mContext, items_tip));
-        }
+         listview_category.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+             @Override
+             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                 if(i==0){
+                     Intent intent = new Intent(ListQnA.this, qna1.class);
+                     startActivity(intent);
+                 }
+                 if(i==1){
+                     Intent intent = new Intent(ListQnA.this, qna2.class);
+                     startActivity(intent);
+                 }
+                 if(i==2){
+                     Intent intent = new Intent(ListQnA.this, qna3.class);
+                     startActivity(intent);
+                 }
+                 if(i==3){
+                     Intent intent = new Intent(ListQnA.this, qna4.class);
+                     startActivity(intent);
+                 }
+
+             }
+         });
+
 
     }
 }

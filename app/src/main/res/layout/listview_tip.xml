@@ -13,6 +13,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:text="수 면"
         android:textSize="15dp"
+        android:ems="13"
         android:textStyle="bold"
         android:textColor="#ffffff"
         android:gravity="center"

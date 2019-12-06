@@ -27,6 +27,15 @@
         <activity android:name=".Loginlayout" />
         <activity android:name=".Joinlayout" />
         <activity android:name=".ListQnA"/>
+        <activity android:name=".qna1"/>
+        <activity android:name=".qna2"/>
+        <activity android:name=".qna3"/>
+        <activity android:name=".qna4"/>
+        <activity android:name=".qna5"/>
+        <activity android:name=".qna6"/>
+        <activity android:name=".qna7"/>
+        <activity android:name=".qna8"/>
+        <activity android:name=".ListQnA2"/>
         <activity android:name=".new_content"/>
         <activity android:name=".content"/>
         <activity android:name=".result"/>

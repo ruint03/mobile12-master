@@ -47,7 +47,7 @@ public class ListViewAdapter_comment extends BaseAdapter {
         ListViewItem_comment listViewItem_comment = listViewItemList.get(pos);
 
         writerView.setText(listViewItem_comment.getWriter());
-        contentView.setText(listViewItem_comment.getComment_content());
+        contentView.setText(listViewItem_comment.getComment());
 
         return view;
     }

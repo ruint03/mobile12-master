@@ -77,7 +77,7 @@ public class Twolayout extends Fragment {
                     startActivity(intent);
                 }
                 if(i==1){
-                    Intent intent = new Intent(getActivity(),ListQnA.class);
+                    Intent intent = new Intent(getActivity(),ListQnA2.class);
                     intent.putExtra("key_2", "avoiding");
                     startActivity(intent);
                 }

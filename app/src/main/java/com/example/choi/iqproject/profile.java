@@ -50,10 +50,6 @@ public class profile extends AppCompatActivity implements View.OnClickListener {
         name = (TextView)findViewById(R.id.Username);
         gender = (TextView)findViewById(R.id.Usergender);
         birth = (TextView)findViewById(R.id.Userbirth);
-
-        FirebaseUser user = auth.getCurrentUser();
-
-        email.setText("반갑습니다!! "+ user.getEmail()+"으로 로그인 하였습니다.");
         profile();
         logout.setOnClickListener(this);
         remove.setOnClickListener(this);
@@ -99,7 +95,10 @@ public class profile extends AppCompatActivity implements View.OnClickListener {
 
 
     public void profile() {
-        Ref.child(auth.getUid()).child("NAME").addValueEventListener(new ValueEventListener() {
+        FirebaseUser user = auth.getCurrentUser();
+
+        email.setText("반갑습니다!! "+ user.getEmail()+"으로 로그인 하였습니다.");
+        Ref.child(user.getUid()).child("NAME").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Object value = dataSnapshot.getValue(Object.class);
@@ -112,7 +111,7 @@ public class profile extends AppCompatActivity implements View.OnClickListener {
             }
         });
 
-        Ref.child(auth.getUid()).child("GENDER").addValueEventListener(new ValueEventListener() {
+        Ref.child(user.getUid()).child("GENDER").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Object value = dataSnapshot.getValue(Object.class);
@@ -125,7 +124,7 @@ public class profile extends AppCompatActivity implements View.OnClickListener {
             }
         });
 
-        Ref.child(auth.getUid()).child("BIRTH").addValueEventListener(new ValueEventListener() {
+        Ref.child(user.getUid()).child("BIRTH").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Object value = dataSnapshot.getValue(Object.class);

@@ -15,10 +15,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class new_content extends AppCompatActivity {
     View v;
     String board_title, board_content;
     private Context context;
+    static int count;
 
     @Nullable
     @Override
@@ -31,6 +37,7 @@ public class new_content extends AppCompatActivity {
         title = (EditText) findViewById(R.id.new_title);
         content = (EditText) findViewById(R.id.new_content);
         Button write = (Button) findViewById(R.id.write);
+
         write.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -46,9 +53,16 @@ public class new_content extends AppCompatActivity {
                 }
                 board_title = title.getText().toString();
                 board_content = content.getText().toString();
+
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                DatabaseReference boarddata = FirebaseDatabase.getInstance().getReference();
+
+                ListViewItem_content content = new ListViewItem_content(board_title,user.getEmail(),board_content);
+                boarddata.child("BOARD").push().setValue(content);
                 finish();
             }
         });
 //        return v;
     }
+
 }
