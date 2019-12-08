@@ -18,6 +18,11 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 
 public class Onelayout extends Fragment {
     Context mContext;
@@ -92,6 +97,14 @@ public class Onelayout extends Fragment {
                     avoid.setText(String.valueOf(score_avoid));
                     sensor.setText(String.valueOf(score_sensor));
                     regist.setText(String.valueOf(score_regist));
+
+                    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                    DatabaseReference resultDB = FirebaseDatabase.getInstance().getReference();
+                    resultDB.child("USER").child(user.getUid()).child("seek").setValue(String.valueOf(score_seek));
+                    resultDB.child("USER").child(user.getUid()).child("avoid").setValue(String.valueOf(score_avoid));
+                    resultDB.child("USER").child(user.getUid()).child("sensor").setValue(String.valueOf(score_sensor));
+                    resultDB.child("USER").child(user.getUid()).child("regist").setValue(String.valueOf(score_regist));
+
                     Intent intent = new Intent(getActivity(), result.class);
                     intent.putExtra("seek", score_seek);
                     intent.putExtra("avoid", score_avoid);

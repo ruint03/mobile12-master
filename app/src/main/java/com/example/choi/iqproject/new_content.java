@@ -22,9 +22,10 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class new_content extends AppCompatActivity {
     View v;
-    String board_title, board_content;
+    String board_title, board_content,qna;
     private Context context;
     static int count;
+
 
     @Nullable
     @Override
@@ -57,8 +58,17 @@ public class new_content extends AppCompatActivity {
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                 DatabaseReference boarddata = FirebaseDatabase.getInstance().getReference();
 
-                ListViewItem_content content = new ListViewItem_content(board_title,user.getEmail(),board_content);
-                boarddata.child("BOARD").push().setValue(content);
+                qna = getIntent().getStringExtra("test");
+
+                if (qna.equals("QNA")){
+                    ListViewItem_content content = new ListViewItem_content(board_title,user.getEmail(),board_content);
+                    boarddata.child("QNA").child(user.getUid()).push().setValue(content);
+                }
+
+                else {
+                    ListViewItem_content content = new ListViewItem_content(board_title, user.getEmail(), board_content);
+                    boarddata.child("BOARD").push().setValue(content);
+                }
                 finish();
             }
         });

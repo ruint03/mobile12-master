@@ -228,10 +228,10 @@
         android:id="@+id/table7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp">
+        android:layout_marginTop="30dp">
 
         <TextView
-            android:layout_width="187dp"
+            android:layout_width="170dp"
             android:layout_height="wrap_content"
             android:text="감각"
             android:textAlignment="center" />
@@ -255,7 +255,7 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:layout_width="187dp"
+            android:layout_width="170dp"
             android:layout_height="wrap_content"
             android:text="감각 추구"
             android:textAlignment="center" />
@@ -280,7 +280,7 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:layout_width="187dp"
+            android:layout_width="170dp"
             android:layout_height="wrap_content"
             android:text="감각 회피"
             android:textAlignment="center" />
@@ -305,8 +305,8 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:layout_width="187dp"
-            android:layout_height="wrap_content"
+            android:layout_width="170dp"
+            android:layout_height="match_parent"
             android:text="감각 민감"
             android:textAlignment="center" />
 
@@ -330,7 +330,7 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:layout_width="187dp"
+            android:layout_width="170dp"
             android:layout_height="wrap_content"
             android:text="감각 둔감"
             android:textAlignment="center" />
@@ -348,12 +348,12 @@
             android:text="40"
             android:textAlignment="center" />
     </TableRow>
-<Button
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/btn_exit"
-    app:layout_constraintBottom_toBottomOf="parent"
-    android:text="결과보기 종료"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_exit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="결과보기 종료"/>
 
 
 

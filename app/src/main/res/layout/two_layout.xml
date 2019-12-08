@@ -44,10 +44,34 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/list_q"/>
+
         <ListView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/list_mtm"
             android:visibility="gone"/>
+
+        <ImageView
+            android:id="@+id/imageButton_q"
+            android:layout_width="103dp"
+            android:layout_height="107dp"
+            android:layout_marginBottom="60dp"
+            android:src="@drawable/new_content"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:layout_gravity="center_horizontal|bottom"
+            android:visibility="gone"
+            />
+        <TextView
+            android:id="@+id/notifi"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="25sp"
+            android:layout_marginTop="150dp"
+            android:layout_marginLeft="80dp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            />
     </FrameLayout>
 </LinearLayout >

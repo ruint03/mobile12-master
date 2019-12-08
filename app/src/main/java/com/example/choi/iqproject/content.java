@@ -31,6 +31,7 @@ public class content extends AppCompatActivity {
     TextView  content,title;
     Button comment;
     EditText edcomment;
+    String QnA,Five;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -41,12 +42,23 @@ public class content extends AppCompatActivity {
         listview_content = findViewById(R.id.list_comment);
         comment = (Button)findViewById(R.id.comment_bu);
         edcomment = (EditText)findViewById(R.id.write_comment);
-        content1();
+
+        QnA = getIntent().getStringExtra("test_q");
+        Five = getIntent().getStringExtra("fiv");
+
+        if(Five == null && QnA.equals("10")){
+            content2();
+            Toast.makeText(content.this, "a", Toast.LENGTH_SHORT).show();
+        }
+        else if (QnA == null && Five.equals("fiv")){
+            content1();
+            Toast.makeText(content.this, "b", Toast.LENGTH_SHORT).show();
+        }
+
         comment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (edcomment.getText().toString().length() == 0) {
-                    Toast.makeText(content.this, "내용을 입력하세요", Toast.LENGTH_SHORT).show();
                     edcomment.requestFocus();
                     return;
                 }
@@ -54,37 +66,34 @@ public class content extends AppCompatActivity {
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                 DatabaseReference boarddata = FirebaseDatabase.getInstance().getReference();
                 String str = getIntent().getStringExtra("title");
-                ListViewItem_comment comment = new ListViewItem_comment(user.getEmail(),edcomment.getText().toString());
-                boarddata.child("COMMENT"+str).push().setValue(comment);
+                String strq = getIntent().getStringExtra("title_q");
+                QnA = getIntent().getStringExtra("test_q");
+                Five = getIntent().getStringExtra("fiv");
+                if(Five == null && QnA.equals("10")){
+                    Toast.makeText(content.this, "a", Toast.LENGTH_SHORT).show();
+
+                    ListViewItem_comment comment = new ListViewItem_comment(user.getEmail(),edcomment.getText().toString());
+                    boarddata.child("COMMENT").child("COMMENT_QNA_"+strq).push().setValue(comment);
+                }
+                else if (QnA == null && Five.equals("fiv")){
+                    Toast.makeText(content.this, "b", Toast.LENGTH_SHORT).show();
+                    ListViewItem_comment comment = new ListViewItem_comment(user.getEmail(), edcomment.getText().toString());
+                    boarddata.child("COMMENT").child("COMMENT_" + str).push().setValue(comment);
+                }
             }
         });
 
         String str = getIntent().getStringExtra("title");
         items_comment = new ArrayList<>();
-        FirebaseDatabase.getInstance().getReference("COMMENT"+str).addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+        if(Five == null && QnA.equals("10")){
+            Toast.makeText(content.this, "a", Toast.LENGTH_SHORT).show();
 
-                ListViewItem_comment comment = dataSnapshot.getValue(ListViewItem_comment.class);
-                items_comment.add(new ListViewItem_comment(comment.getWriter(), comment.getComment()));
-                listview_content.setAdapter(new ListViewAdapter_comment(mContext, items_comment));
-            }
-            @Override
-            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-            }
-
-            @Override
-            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
-            }
-
-            @Override
-            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-            }
-        });
+            comment2();
+        }
+        else if (QnA == null && Five.equals("fiv")){
+            Toast.makeText(content.this, "b", Toast.LENGTH_SHORT).show();
+            comment1();
+        }
     }
 
     public void content1() {
@@ -110,5 +119,85 @@ public class content extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void comment1(){
+        String str = getIntent().getStringExtra("title");
+        FirebaseDatabase.getInstance().getReference("COMMENT").child("COMMENT_"+str).addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+                ListViewItem_comment comment = dataSnapshot.getValue(ListViewItem_comment.class);
+                items_comment.add(new ListViewItem_comment(comment.getWriter(), comment.getComment()));
+                listview_content.setAdapter(new ListViewAdapter_comment(mContext, items_comment));
+            }
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+            }
+        });
+    }
+
+    public void content2() {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        FirebaseDatabase.getInstance().getReference("QNA").child(user.getUid()).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String str = getIntent().getStringExtra("title_q");
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
+                    String str_ti = snapshot.child("title").getValue(String.class);
+                    String str_co = snapshot.child("content").getValue(String.class);
+                    if (str.equals (str_ti)){
+                        title.setText("제목 : "+str_ti);
+                        content.setText(str_co);
+                    }
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+    }
+    public void comment2(){
+        String str = getIntent().getStringExtra("title_q");
+        FirebaseDatabase.getInstance().getReference("COMMENT").child("COMMENT_QNA_"+str).addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+                ListViewItem_comment comment = dataSnapshot.getValue(ListViewItem_comment.class);
+                items_comment.add(new ListViewItem_comment(comment.getWriter(), comment.getComment()));
+                listview_content.setAdapter(new ListViewAdapter_comment(mContext, items_comment));
+            }
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+            }
+        });
     }
 }

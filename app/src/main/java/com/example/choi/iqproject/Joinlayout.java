@@ -28,7 +28,7 @@ public class Joinlayout extends AppCompatActivity {
     private EditText reg_id, reg_pass, reg_name, reg_birth;
     private Button reg;
     //유저 데이터 저장 변수
-    String gender, user_id, user_pass, user_name;
+    String gender, user_id, user_pass, user_name,no;
     Integer user_birth;
 
     //아이디 비밀번호 로그인 모듈 변수
@@ -126,17 +126,25 @@ public class Joinlayout extends AppCompatActivity {
     }
     // 가입한 정보 DB로 넘김
     public void JoinDB(){
-        id1 = currUser.getUid();
-        User.child("USER").child(id1).child("ID").setValue(user_id);
-        User.child("USER").child(id1).child("PASS").setValue(user_pass);
-        User.child("USER").child(id1).child("NAME").setValue(user_name);
-        User.child("USER").child(id1).child("GENDER").setValue(gender);
-        User.child("USER").child(id1).child("BIRTH").setValue(user_birth);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        no = "no";
+
+        User.child("USER").child(user.getUid()).child("ID").setValue(user_id);
+        User.child("USER").child(user.getUid()).child("PASS").setValue(user_pass);
+        User.child("USER").child(user.getUid()).child("NAME").setValue(user_name);
+        User.child("USER").child(user.getUid()).child("GENDER").setValue(gender);
+        User.child("USER").child(user.getUid()).child("BIRTH").setValue(user_birth);
+        User.child("USER").child(user.getUid()).child("seek").setValue(no);
+        User.child("USER").child(user.getUid()).child("avoid").setValue(no);
+        User.child("USER").child(user.getUid()).child("sensor").setValue(no);
+        User.child("USER").child(user.getUid()).child("regist").setValue(no);
+
+
+
     }
 
 
 }
-
 
 
 

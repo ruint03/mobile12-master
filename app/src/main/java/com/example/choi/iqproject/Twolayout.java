@@ -4,11 +4,13 @@ package com.example.choi.iqproject;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 
 import android.app.Fragment;
 import android.view.LayoutInflater;
@@ -16,20 +18,32 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
 
 public class Twolayout extends Fragment {
     View v;
-    private Context mContext;
+    Context mContext;
     ListView listview_category, listview_content;
+    ImageView wr_button;
     ArrayList<ListViewItem_q> items_q;
     ArrayList<ListViewItem_content> items_content;
+    TextView notifi;
     int i =0;
     public Twolayout() {}
 
@@ -59,14 +73,15 @@ public class Twolayout extends Fragment {
         });
         listview_category = v.findViewById(R.id.list_q);
         listview_content = v.findViewById(R.id.list_mtm);
+        wr_button = v.findViewById(R.id.imageButton_q) ;
+        notifi = v.findViewById(R.id.notifi);
         items_content = new ArrayList<>();
         items_q = new ArrayList<>();
         items_q.add(new ListViewItem_q("<1>","감각 행동 추구","(Sensory seeking behaviors)"));
         items_q.add(new ListViewItem_q("<2>","감각 회피 행동","(Sensory avoiding behaviors)"));
-        items_content.add(new ListViewItem_content("테스트를 하기위한 제목 설정 중입니다", "관리자"));
-        items_content.add(new ListViewItem_content("테스트를 하기위한 제목 설정 중입니다(2)", "관리자"));
         listview_category.setAdapter(new ListViewAdapter_q(mContext, items_q));
-        listview_content.setAdapter(new ListViewAdapter_content(mContext,items_content));
+
+        QnADB();
         listview_category.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
@@ -83,31 +98,81 @@ public class Twolayout extends Fragment {
                 }
             }
         });
+
         listview_content.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(getActivity(),content.class);
+                Intent intent1 = new Intent(getActivity(),content.class);
+                intent1.putExtra("title_q",items_content.get(i).getTitle());
+                intent1.putExtra("test_q","10");
+                startActivity(intent1);
+            }
+        });
+
+        wr_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), new_content.class);
+                intent.putExtra("test", "QNA");
                 startActivity(intent);
             }
         });
         return v;
     }
+    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+    public void QnADB(){
+        if (user == null){
+            notifi.setText("로그인 후 이용해주세요!");
+        }
+        else {
+            FirebaseDatabase.getInstance().getReference("QNA").child(user.getUid()).addChildEventListener(new ChildEventListener() {
+                @Override
+                public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+                    ListViewItem_content content = dataSnapshot.getValue(ListViewItem_content.class);
+                    items_content.add(new ListViewItem_content(content.getTitle(), content.getWriter()));
+                    listview_content.setAdapter(new ListViewAdapter_content(mContext, items_content));
+                }
+                @Override
+                public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                }
+
+                @Override
+                public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+                }
+
+                @Override
+                public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+                }
+            });
+        }
+    }
     private void changeView(int index){
         FrameLayout frame = (FrameLayout) v.findViewById(R.id.frame_q);
-
         frame.removeViewAt(0);
         switch (index){
             case 0:
                 frame.addView(listview_category);
                 listview_category.setVisibility(View.VISIBLE);
                 listview_content.setVisibility(View.GONE);
+                wr_button.setVisibility(View.GONE);
+                notifi.setVisibility(View.GONE);
                 frame.removeView(listview_content);
                 break;
             case 1:
                 frame.removeAllViews();
                 frame.addView(listview_content);
+                frame.addView(wr_button);
+                frame.addView(notifi);
                 listview_content.setVisibility(View.VISIBLE);
                 listview_category.setVisibility(View.GONE);
+                wr_button.setVisibility(View.VISIBLE);
+                notifi.setVisibility(View.VISIBLE);
+                frame.removeView(listview_category);
                 break;
         }
     }

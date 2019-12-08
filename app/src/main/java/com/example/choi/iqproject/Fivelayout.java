@@ -82,9 +82,11 @@ public class Fivelayout extends Fragment  {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(getActivity(),content.class);
                 intent.putExtra("title",items_content.get(i).getTitle());
+                intent.putExtra("fiv","fiv");
                 startActivity(intent);
             }
         });
+
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
